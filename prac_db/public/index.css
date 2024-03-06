@@ -1,0 +1,29 @@
+body{
+    background-color: #D3D3D3;
+}
+.container1{
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:100px;
+    width:300px;
+    height: 400px;
+    border: solid black;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+#kenworth {
+    background-color: red;
+    color:white;
+    border-bottom: solid black;
+    margin-bottom: 150px;
+    padding-top: 50px;
+    width:300px;
+    height:200px;
+    text-align: center;
+}

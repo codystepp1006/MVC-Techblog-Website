@@ -1,0 +1,16 @@
+body{
+    background-color: lightgray;
+}
+h1 {
+    display:inline;
+}
+#header {
+    background-color: red;
+}
+
+ul {
+    text-align: right;
+}
+ul li {
+    display: inline-block;
+}

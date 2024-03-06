@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS kenworth_db;
+CREATE DATABASE kenworth_db;
