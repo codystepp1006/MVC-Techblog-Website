@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS blogpost;
 
 CREATE TABLE `account` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -8,4 +9,9 @@ CREATE TABLE `account` (
   UNIQUE KEY `email` (`email`)
 );
 
-     USE kenworth_db;
+CREATE TABLE blogpost (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  blog_data VARCHAR(500),
+  account_id INT,
+  FOREIGN KEY (account_id) REFERENCES account(id)
+);

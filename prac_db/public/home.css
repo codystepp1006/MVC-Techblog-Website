@@ -14,3 +14,23 @@ ul {
 ul li {
     display: inline-block;
 }
+
+#postBox{
+    width: 400px;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+#postBtn{
+    margin-top: 15px;
+   margin-left: 70%;
+
+}
+#blogContainer{
+    background-color: lightgrey;
+    width: 400px;
+    margin-left: 100px;
+}
+#postedBlog{
+    margin-bottom:10px;
+}

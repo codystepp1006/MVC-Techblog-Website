@@ -25,4 +25,11 @@ var data = {
       .then(res => res.json())
       .then(json => console.log(json))
       .catch(err => console.error('error:' + err));
+
+      backToHome();
 }
+
+function backToHome(){
+      window.location = '/'
+};
+

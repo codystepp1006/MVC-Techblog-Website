@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS kenworth_db;
-CREATE DATABASE kenworth_db;
+DROP DATABASE IF EXISTS blogpost_db;
+CREATE DATABASE blogpost_db;

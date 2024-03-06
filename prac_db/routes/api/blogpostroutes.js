@@ -18,11 +18,11 @@ router.get('/', async (req, res) => {
 
 //note: needs to be async dont miss that
 //ALSO these are the third endpoints for our api URL's and testint.
-router.post('/createaccount', async (req, res) => {
-    console.info(req.body.email);
+router.post('/savepost', async (req, res) => {
+    console.info(req.body.post);
 
 
-    const sql ='INSERT INTO blogpost_db.account (email,password) VALUES(' + '\'' +  req.body.email + '\'' + ',' + '\'' + req.body.password + '\'' + ');'
+    const sql ='INSERT INTO blogpost_db.blogpost (blog_data) VALUES(' + '\'' +  req.body.post + '\');'
 
     var response =  db.query(sql);
     res.status(200).json({cool: sql});
