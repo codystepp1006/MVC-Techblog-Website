@@ -48,7 +48,11 @@ var data = {
     .catch(err => console.error('error:' + err));
 
     console.log
+    backToHome();
+    alert("You're Account Has been created!");
+
     return userObj;
+    
 }
 
 
