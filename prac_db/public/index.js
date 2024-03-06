@@ -8,28 +8,91 @@ function createAccount(){
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    let url = 'http://localhost:3000/api/account/createaccount';
-    
-var data = {
-    email: email,
-    password: password
-};
 
-    let options = {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.6.1'},
-      body: JSON.stringify(data)
-    };
-    
-    fetch(url, options)
-      .then(res => res.json())
-      .then(json => console.log(json))
-      .catch(err => console.error('error:' + err));
+//var currentAccount = checkAccount(email, password);
 
-      backToHome();
+var userObj = addAccount(email,password);
+console.log(userObj);
+// if(!currentAccount){
+//    addAccount(email,password);
+
+// } else {
+//   setCookie('techblog'. us )
+// }
+
+
+
+      // backToHome();
 }
 
-function backToHome(){
+function addAccount(email, password){
+
+  let url = 'http://localhost:3000/api/account/createaccount';
+  
+var data = {
+  email: email,
+  password: password
+};
+
+  let options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.6.1'},
+    body: JSON.stringify(data)
+  };
+  let userObj = null;
+  fetch(url, options)
+    .then(res => res.json())
+    .then(json => {
+      userObj = json;
+      console.log(json)})
+    .catch(err => console.error('error:' + err));
+
+    console.log
+    return userObj;
+}
+
+
+function backToHome( email,password){
       window.location = '/'
 };
 
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
+
+
+//checks to see if cookies are enabled.
+console.log(navigator.cookieEnabled);
+
+// function login();

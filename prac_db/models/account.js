@@ -17,7 +17,7 @@ Account.init(
           email: {
             type: DataTypes.STRING
           },
-          passowrd: {
+          password: {
             type: DataTypes.STRING
           }
     },  {
